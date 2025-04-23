@@ -48,8 +48,7 @@ admin.site.register(customer,customerAdmin)
 
 ## OUTPUT
 
-![image](https://github.com/user-attachments/assets/a1bba0f1-19bb-48ac-9366-80b7c9189e9f)
-
+![alt text](orm.png)
 
 
 ## RESULT
