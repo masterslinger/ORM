@@ -6,7 +6,8 @@ To develop a Django application to store and retrieve data from Movies Database 
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-![image](https://github.com/user-attachments/assets/8b6facfc-303f-45c0-ad12-cd8733a0d3eb)
+![image](https://github.com/user-attachments/assets/de6836a6-b03f-4205-9c2b-bf071df8c883)
+
 
 
 ## DESIGN STEPS
@@ -25,30 +26,32 @@ Execute Django admin and create details for 10 books
 
 ## PROGRAM
 ```
-models.py
-
-from django.db import models
-from django.contrib import admin
-class customer (models.Model):
-    c_id=models.IntegerField(primary_key=True)
-    name=models.CharField(max_length=100)
-    salary=models.IntegerField()
-    age=models.IntegerField()
-    email=models.EmailField()
- 
-class customerAdmin(admin.ModelAdmin):
-    list_display=('c_id','name','salary','age','email')
- 
 admin.py
 
-from django.contrib import admin
-from .models import customer,customerAdmin
-admin.site.register(customer,customerAdmin)
+from django.contrib import admin 
+from .models import Movie_DB,Movie_DBAdmin 
+admin.site.register(Movie_DB,Movie_DBAdmin)
+
+models.py
+
+from django.db import models 
+from django.contrib import admin 
+class  Movie_DB(models.Model): 
+    Movie_ID = models.CharField(max_length=20, primary_key=True) 
+    Title = models.CharField(max_length=100) 
+    Genre = models.CharField(max_length=20) 
+    Rating = models.IntegerField( ) 
+    Language = models.CharField(max_length=15) 
+    Release_Date = models.DateField( ) 
+
+class Movie_DBAdmin(admin.ModelAdmin): 
+    list_display = ('Movie_ID', 'Title', 'Genre', 'Rating', 'Language', 'Release_Date')
 ```
 
 ## OUTPUT
 
-![alt text](orm.png)
+![image](https://github.com/user-attachments/assets/45159c1d-1201-410f-8da1-20089fff391e)
+
 
 
 ## RESULT
